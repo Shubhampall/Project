@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {View, Text, ImageBackground, Linking, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Iconsuser from 'react-native-vector-icons/FontAwesome';
 import CheckBox from '@react-native-community/checkbox';
 import {useDispatch} from 'react-redux';
 
@@ -13,7 +12,8 @@ import styles from './style';
 import {setUserDetails} from '../../store/Registration/action';
 import {includes, isEmpty} from 'lodash';
 import Color from '../../constant/Color';
-
+import JsonData from './JsonData';
+import {Pressable} from 'react-native';
 const Registration = ({navigation}) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const dispatch = useDispatch();
@@ -60,66 +60,36 @@ const Registration = ({navigation}) => {
             </Text>
           </View>
           <View style={styles.row}>
-            <Icon.Button
-              style={styles.button}
-              backgroundColor={Color.White}
-              onPress={() => Linking.openURL('https://github.com/')}>
-              <Icon name="github" size={30} />
-              <Text style={styles.IconText}>Github</Text>
-            </Icon.Button>
-            <Text style={styles.margin20} />
-            <Icon.Button
-              style={styles.button}
-              backgroundColor={Color.White}
-              onPress={() => Linking.openURL('https://gmail.com/')}>
-              <Icon name="google" size={34} style={styles.margin10} />
-              <Text style={styles.IconText}>Google</Text>
-            </Icon.Button>
+            {JsonData.buttonData.map((items) => (
+              <Pressable
+                style={styles.pressable}
+                key={items.id}
+                onPress={() => Linking.openURL(items.url)}>
+                <Icon name={items.icon} style={styles.margin10} size={30} />
+                <Text style={styles.IconText}>{items.icon}</Text>
+              </Pressable>
+            ))}
           </View>
         </View>
         <Text style={styles.Textsing} size={12}>
           or sign with classic way
         </Text>
-        <View style={styles.searchSection}>
-          <View style={styles.ViewIcon}>
-            <Iconsuser name="user" size={20} style={styles.padding5} />
+        {JsonData.data.map((items) => (
+          <View style={styles.searchSection} key={items.id}>
+            <View style={styles.ViewIcon}>
+              <Icons name={items.icon} size={20} style={styles.padding5} />
+            </View>
+            <View style={styles.ViewInput}>
+              <Inputcomponent
+                placeholder={items.placeholder}
+                show={items.show}
+                handle={(text) => {
+                  handleUserDetails(items.target, text);
+                }}
+              />
+            </View>
           </View>
-          <View style={styles.ViewInput}>
-            <Inputcomponent
-              placeholder="Enter Your Name"
-              handle={(text) => {
-                handleUserDetails('name', text);
-              }}
-            />
-          </View>
-        </View>
-        <View style={[styles.searchSection, styles.marginTop5]}>
-          <View style={styles.ViewIcon}>
-            <Icons name="email" size={20} style={styles.padding5} />
-          </View>
-          <View style={styles.ViewInput}>
-            <Inputcomponent
-              placeholder="Enter Your Email"
-              handle={(text) => {
-                handleUserDetails('email', text);
-              }}
-            />
-          </View>
-        </View>
-        <View style={[styles.searchSection, styles.marginTop5]}>
-          <View style={styles.ViewIcon}>
-            <Icons name="onepassword" size={20} style={styles.padding5} />
-          </View>
-          <View style={styles.ViewInput}>
-            <Inputcomponent
-              placeholder="Enter Your Password"
-              show={true}
-              handle={(text) => {
-                handleUserDetails('password', text);
-              }}
-            />
-          </View>
-        </View>
+        ))}
         <View style={styles.checkbox}>
           <CheckBox
             borderColor="#663399"

@@ -15,9 +15,11 @@ import {setAuthentication} from '../../store/Registration/action';
 import {styles} from './Style';
 import {LoginBack} from '../../constant/images';
 import Inputcomponent from '../commonComponent/Input';
+import JsonData from './JsonData';
 import ButtonComponent from '../commonComponent/Button';
 import {includes, isEmpty} from 'lodash';
 import Color from '../../constant/Color';
+import {Pressable} from 'react-native';
 const Login = ({navigation}) => {
   const Registrationstate = useSelector((state) => state.Registration);
   const dispatchProps = useDispatch();
@@ -67,55 +69,34 @@ const Login = ({navigation}) => {
             Login with
           </Text>
           <View style={styles.Icon}>
-            <View style={styles.ViewStyle}>
-              <Icon.Button
-                style={styles.button}
-                onPress={() => Linking.openURL('https://github.com/')}>
-                <Icon name="github" size={30} />
-                <Text style={styles.IconButton}>Github</Text>
-              </Icon.Button>
-            </View>
-            <Text style={styles.marginLeft20} />
-            <View style={styles.ViewStyle}>
-              <Icon.Button
-                style={styles.button}
-                backgroundColor="#FFFFFF"
-                onPress={() => Linking.openURL('https://gmail.com/')}>
-                <Icon name="google" size={34} style={styles.marginLeft} />
-                <Text style={styles.IconButton}>Google</Text>
-              </Icon.Button>
-            </View>
+            {JsonData.buttonData.map((items) => (
+              <Pressable
+                style={styles.pressable}
+                key={items.id}
+                onPress={() => Linking.openURL(items.url)}>
+                <Icon name={items.icon} style={styles.margin10} size={30} />
+                <Text style={styles.IconText}>{items.icon}</Text>
+              </Pressable>
+            ))}
           </View>
         </View>
         <Text style={styles.Top20}>Login with classic way</Text>
-        <View style={styles.searchSection}>
-          <View style={styles.ViewIcon}>
-            <Icons name="email" size={20} style={styles.padding5} />
+        {JsonData.data.map((items) => (
+          <View style={styles.searchSection} key={items.id}>
+            <View style={styles.ViewIcon}>
+              <Icons name={items.icon} size={20} style={styles.padding5} />
+            </View>
+            <View style={styles.ViewInput}>
+              <Inputcomponent
+                placeholder={items.placeholder}
+                show={items.show}
+                handle={(text) => {
+                  Dispatch(items.target, text);
+                }}
+              />
+            </View>
           </View>
-          <View style={styles.ViewInput}>
-            <Inputcomponent
-              placeholder="Enter Your Email"
-              keybordtype="email"
-              handle={(text) => {
-                Dispatch('email', text);
-              }}
-            />
-          </View>
-        </View>
-        <View style={[styles.searchSection, styles.marginTop5]}>
-          <View style={styles.ViewIcon}>
-            <Icons name="onepassword" size={20} style={styles.padding5} />
-          </View>
-          <View style={styles.ViewInput}>
-            <Inputcomponent
-              placeholder="Enter Your Password"
-              show={true}
-              handle={(text) => {
-                Dispatch('password', text);
-              }}
-            />
-          </View>
-        </View>
+        ))}
         <View style={styles.checkbox}>
           <CheckBox
             borderColor="#663399"
