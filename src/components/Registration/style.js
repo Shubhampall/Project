@@ -2,24 +2,12 @@ import {StyleSheet} from 'react-native';
 
 import Color from '../../constant/Color';
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-  },
   image: {
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
   },
-  text: {
-    color: 'white',
-    fontSize: 42,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    backgroundColor: '#000000a0',
-  },
   demo: {
-    // backgroundColor: '#FFFAFA',
     width: '90%',
     height: 500,
     borderRadius: 10,
@@ -27,7 +15,6 @@ const styles = StyleSheet.create({
     marginLeft: '-30%',
     alignItems: 'center',
   },
-
   signuppage: {
     borderColor: Color.Black,
     borderWidth: 0.1,
@@ -45,6 +32,8 @@ const styles = StyleSheet.create({
     padding: '0.5%',
     alignItems: 'center',
   },
+  Textcolor: {color: Color.Blur_Black},
+  row: {flexDirection: 'row'},
   button: {
     borderColor: Color.Black,
     borderWidth: 0,
@@ -57,6 +46,10 @@ const styles = StyleSheet.create({
     height: '70%',
     alignItems: 'center',
   },
+  IconText: {color: Color.Blue, marginLeft: 10, fontSize: 18},
+  margin20: {marginLeft: 20},
+  margin10: {marginLeft: 10},
+  Textsing: {color: Color.Blur_Black, top: 20},
   searchSection: {
     marginTop: '15%',
     flexDirection: 'row',
@@ -73,20 +66,13 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   marginTop5: {marginTop: '05%'},
-
-  Textcolor: {color: Color.Blur_Black},
-  row: {flexDirection: 'row'},
-  IconText: {color: Color.Blue, marginLeft: 10, fontSize: 18},
-  margin20: {marginLeft: 20},
-  margin10: {marginLeft: 10},
-  Textsing: {color: Color.Blur_Black, top: 20},
+  ViewIcon: {width: 'auto', marginLeft: '5%'},
   padding5: {padding: 5},
+  ViewInput: {width: '80%', marginLeft: '5%'},
   checkbox: {flexDirection: 'row', top: '07%', marginRight: '27%'},
   checkBox: {borderWidth: 3},
   Top3: {top: '03%'},
   colorTop: {color: Color.Purple, top: '03%'},
   Buttocomponet: {width: '70%', top: '10%'},
-  ViewInput: {width: '80%', marginLeft: '5%'},
-  ViewIcon: {width: 'auto', marginLeft: '5%'},
 });
 export default styles;

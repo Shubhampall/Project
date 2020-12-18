@@ -2,9 +2,7 @@ import {StyleSheet} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Color from '../../constant/Color';
 export const styles = StyleSheet.create({
-  image: {
-    flex: 1,
-  },
+  fullScreen: {height: '100%', width: '100%'},
   FirstView: {
     flex: 1,
   },
@@ -31,8 +29,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginBottom: 10,
   },
-  margon60: {marginLeft: 60},
-  margin40: {marginLeft: 40},
   styleContainer: {
     width: '100%',
     marginTop: 0,
@@ -78,7 +74,6 @@ export const styles = StyleSheet.create({
     marginTop: 5,
     flexDirection: 'row',
   },
-  ItemContainer: {backgroundColor: 'white', height: '60%'},
   View: {
     fontWeight: 'bold',
     fontSize: 15,

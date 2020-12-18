@@ -32,34 +32,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     flexDirection: 'row',
   },
-  cardTitle: {
-    flex: 1,
-    flexWrap: 'wrap',
-    paddingBottom: 6,
-    marginBottom: '10%',
-    backgroundColor: 'black',
-    height: '20%',
-  },
   View1: {width: '55%', marginLeft: '3%'},
   Text1: {width: '20%', height: '20%'},
   View2: {width: 'auto', height: '60%'},
   Text2: {paddingBottom: 6, color: Color.Blue},
-  Header: {
-    flexDirection: 'row',
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#FFFFFF',
-    elevation: 1,
-  },
-  text: {
-    fontSize: 18,
-    top: 14,
-  },
-  button: {
-    top: 5,
-    width: '80%',
-  },
-  Top8: {top: -8},
-  HeaderView: {flexDirection: 'row', left: '43%'},
 });
 export default styles;

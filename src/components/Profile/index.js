@@ -9,7 +9,7 @@ import {styles} from './style';
 
 const Profile = ({navigation}) => {
   return (
-    <ImageBackground source={LoginBack} style={{height: '100%', width: '100%'}}>
+    <ImageBackground source={LoginBack} style={styles.fullScreen}>
       <HeaderComponent name="Profile" navigation={navigation} />
       <View style={styles.FirstView}>
         <ScrollView style={styles.ScrollView}>

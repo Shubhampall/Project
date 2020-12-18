@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   Icon: {marginTop: '07%', position: 'absolute', marginLeft: '80%'},
+  //u
   flex: {flexDirection: 'row'},
 });
 

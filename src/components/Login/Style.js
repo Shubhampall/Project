@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     resizeMode: 'cover',
     justifyContent: 'center',
   },
+
   demo: {
     backgroundColor: Color.cream,
     width: '90%',
@@ -62,7 +63,6 @@ export const styles = StyleSheet.create({
     elevation: 2,
   },
   marginTop5: {marginTop: '05%'},
-
   ViewStyle: {
     marginTop: 5,
     borderColor: Color.Black,

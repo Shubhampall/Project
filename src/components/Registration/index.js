@@ -70,7 +70,7 @@ const Registration = ({navigation}) => {
             <Text style={styles.margin20} />
             <Icon.Button
               style={styles.button}
-              backgroundColor="#FFFFFF"
+              backgroundColor={Color.White}
               onPress={() => Linking.openURL('https://gmail.com/')}>
               <Icon name="google" size={34} style={styles.margin10} />
               <Text style={styles.IconText}>Google</Text>
@@ -87,7 +87,6 @@ const Registration = ({navigation}) => {
           <View style={styles.ViewInput}>
             <Inputcomponent
               placeholder="Enter Your Name"
-              style={styles.input}
               handle={(text) => {
                 handleUserDetails('name', text);
               }}
@@ -101,7 +100,6 @@ const Registration = ({navigation}) => {
           <View style={styles.ViewInput}>
             <Inputcomponent
               placeholder="Enter Your Email"
-              style={styles.input1}
               handle={(text) => {
                 handleUserDetails('email', text);
               }}
@@ -116,7 +114,6 @@ const Registration = ({navigation}) => {
             <Inputcomponent
               placeholder="Enter Your Password"
               show={true}
-              style={styles.input1}
               handle={(text) => {
                 handleUserDetails('password', text);
               }}
