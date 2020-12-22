@@ -15,16 +15,24 @@ import {createStackNavigator} from '@react-navigation/stack';
 import index from './src/components/Main';
 import Login from './src/components/Login';
 import Registration from './src/components/Registration';
+import {useSelector} from 'react-redux';
 const Stack = createStackNavigator();
 const App = () => {
+  const Login1 = useSelector((state) => state.Login);
+  console.log(Login1.authentication);
   return (
     // <Provider store={ConfigStore}>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login" headerMode={null}>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Registration" component={Registration} />
-        <Stack.Screen name="Main" component={index} />
-      </Stack.Navigator>
+      {Login1.authentication ? (
+        <Stack.Navigator initialRouteName="Main" headerMode={null}>
+          <Stack.Screen name="Main" component={index} />
+        </Stack.Navigator>
+      ) : (
+        <Stack.Navigator initialRouteName="Login" headerMode={null}>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Registration" component={Registration} />
+        </Stack.Navigator>
+      )}
     </NavigationContainer>
     // </Provider>
   );

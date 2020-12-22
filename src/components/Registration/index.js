@@ -14,6 +14,7 @@ import {includes, isEmpty} from 'lodash';
 import Color from '../../constant/Color';
 import JsonData from './JsonData';
 import {Pressable} from 'react-native';
+
 const Registration = ({navigation}) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const dispatch = useDispatch();
@@ -22,7 +23,6 @@ const Registration = ({navigation}) => {
     email: '',
     password: '',
   });
-
   const handleUserDetails = (type, val) => {
     handleUser({
       ...user,

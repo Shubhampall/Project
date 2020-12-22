@@ -20,6 +20,7 @@ import ButtonComponent from '../commonComponent/Button';
 import {includes, isEmpty} from 'lodash';
 import Color from '../../constant/Color';
 import {Pressable} from 'react-native';
+
 const Login = ({navigation}) => {
   const Registrationstate = useSelector((state) => state.Registration);
   const dispatchProps = useDispatch();
@@ -45,8 +46,7 @@ const Login = ({navigation}) => {
             userLogin.email === Registrationstate.userData.email &&
             userLogin.password === Registrationstate.userData.password
           ) {
-            dispatchProps(setAuthentication());
-            return navigation.navigate('Main');
+            return dispatchProps(setAuthentication());
           } else {
             Alert.alert('Invalid Email and Password');
           }

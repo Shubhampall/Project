@@ -9,20 +9,35 @@ import HeaderComponent from '../Layout/Header';
 import Inputcomponent from '../commonComponent/Input';
 import {ice} from '../../constant/images';
 import Card from '../commonComponent/Card';
-import {url} from '../../utils/url';
 import styles from './Style';
-import Color from '../../constant/Color';
+import {useDispatch, useSelector} from 'react-redux';
+import {apiData} from '../../store/Home/operation';
+import {isEmpty} from 'lodash';
+import Skeleton from 'react-native-skeleton-placeholder';
 
 const Home = ({navigation}) => {
+  const SkeletopLoder = () => {
+    const json = [1, 2, 3, 4, 5, 6, 7];
+    return (
+      <Skeleton>
+        {json.map((items, index) => (
+          <View key={index} style={styles.map} />
+        ))}
+      </Skeleton>
+    );
+  };
   const [data, setData] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  const DispatchData = (value) => {
+    setData(value);
+  };
   useEffect(() => {
-    fetch(`${url}posts`)
-      .then((response) => response.json())
-      .then((json) => setData(json))
-      .catch((error) => alert(error))
-      .finally(() => setLoading(false));
-  }, []);
+    dispatch(apiData('/posts'));
+  }, [dispatch]);
+  const HomeData = useSelector((state) => state.Home);
+  useEffect(() => {
+    DispatchData(HomeData.json.homeData);
+  }, [HomeData.json.homeData]);
   return (
     <View style={styles.Background}>
       <HeaderComponent name="Home" navigation={navigation} />
@@ -53,9 +68,10 @@ const Home = ({navigation}) => {
         </View>
       </View>
       <ScrollView style={styles.scroll}>
-        {isLoading ? (
-          <ActivityIndicator size="large" color={Color.Blue} />
+        {isEmpty(data) ? (
+          <SkeletopLoder />
         ) : (
+          // <ActivityIndicator size="large" color={Color.Blue} />
           data.map((item, index) => {
             return (
               <View key={index} style={styles.map}>

@@ -27,7 +27,7 @@ const Inputcomponent = ({placeholder, show = false, handle}) => {
 };
 const styles = StyleSheet.create({
   input: {
-    width: '80%',
+    width: '90%',
   },
   Icon: {marginTop: '07%', position: 'absolute', marginLeft: '80%'},
   //u

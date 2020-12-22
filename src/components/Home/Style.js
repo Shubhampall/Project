@@ -48,17 +48,15 @@ const styles = StyleSheet.create({
     borderColor: Color.Black,
     borderWidth: 0,
     shadowColor: Color.Black,
-    shadowOffset: {width: 0, height: 1},
     shadowRadius: 2,
     shadowOpacity: 0.05,
     borderRadius: 5,
-    elevation: 2,
+    elevation: 1,
   },
 
   Search: {
     fontSize: 22,
-    marginLeft: 110,
-    marginTop: '10%',
+    marginVertical: 10,
   },
 });
 export default styles;

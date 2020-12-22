@@ -14,6 +14,7 @@ MERGED from [:react-native-gesture-handler] /home/user36/Desktop/Argon_Demo_Proj
 MERGED from [:react-native-reanimated] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-safe-area-context] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-shimmer] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-shimmer/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-vector-icons] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.63.3] /home/user36/.gradle/caches/transforms-2/files-2.1/453fd5cf61c767b449638bac050b03af/jetified-react-native-0.63.3/AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/user36/.gradle/caches/transforms-2/files-2.1/37b6f551bc5ae153b0b627de8f563815/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -60,6 +61,7 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] /home/user36/.gradle/caches/t
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/user36/.gradle/caches/transforms-2/files-2.1/4da6ddd3c71dbaec92b0fdf3bbca4ce7/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /home/user36/.gradle/caches/transforms-2/files-2.1/2ef959591ee3dfd7e7d0f130ebacb270/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/user36/.gradle/caches/transforms-2/files-2.1/babedcb26ba2505096ea9fb87ec93180/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] /home/user36/.gradle/caches/transforms-2/files-2.1/60a2a056b504df08153b00f20eb4eced/shimmer-0.5.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.fresco:fbcore:2.2.0] /home/user36/.gradle/caches/transforms-2/files-2.1/c8821bab5d16c360deab7522c94eae51/jetified-fbcore-2.2.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:ui-common:2.2.0] /home/user36/.gradle/caches/transforms-2/files-2.1/c114d4501470930b3986c4f9bd2da0fd/ui-common-2.2.0/AndroidManifest.xml:2:1-9:12
 INJECTED from /home/user36/Desktop/Argon_Demo_Project/android/app/src/debug/AndroidManifest.xml:2:1-8:12
@@ -176,6 +178,8 @@ MERGED from [:react-native-safe-area-context] /home/user36/Desktop/Argon_Demo_Pr
 MERGED from [:react-native-safe-area-context] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-screens] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-shimmer] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-shimmer/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-shimmer] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-shimmer/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-vector-icons] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-vector-icons] /home/user36/Desktop/Argon_Demo_Project/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.63.3] /home/user36/.gradle/caches/transforms-2/files-2.1/453fd5cf61c767b449638bac050b03af/jetified-react-native-0.63.3/AndroidManifest.xml:7:5-9:41
@@ -268,6 +272,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /home/user36/.gra
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /home/user36/.gradle/caches/transforms-2/files-2.1/2ef959591ee3dfd7e7d0f130ebacb270/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/user36/.gradle/caches/transforms-2/files-2.1/babedcb26ba2505096ea9fb87ec93180/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/user36/.gradle/caches/transforms-2/files-2.1/babedcb26ba2505096ea9fb87ec93180/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] /home/user36/.gradle/caches/transforms-2/files-2.1/60a2a056b504df08153b00f20eb4eced/shimmer-0.5.0/AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.shimmer:shimmer:0.5.0] /home/user36/.gradle/caches/transforms-2/files-2.1/60a2a056b504df08153b00f20eb4eced/shimmer-0.5.0/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.fresco:fbcore:2.2.0] /home/user36/.gradle/caches/transforms-2/files-2.1/c8821bab5d16c360deab7522c94eae51/jetified-fbcore-2.2.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:2.2.0] /home/user36/.gradle/caches/transforms-2/files-2.1/c8821bab5d16c360deab7522c94eae51/jetified-fbcore-2.2.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:ui-common:2.2.0] /home/user36/.gradle/caches/transforms-2/files-2.1/c114d4501470930b3986c4f9bd2da0fd/ui-common-2.2.0/AndroidManifest.xml:5:5-7:41

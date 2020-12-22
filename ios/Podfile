@@ -8,6 +8,8 @@ target 'Argon_Demo_Project' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'react-native-shimmer', :path => '../node_modules/react-native-shimmer'
+
   target 'Argon_Demo_ProjectTests' do
     inherit! :complete
     # Pods for testing

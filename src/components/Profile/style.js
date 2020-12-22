@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Color from '../../constant/Color';
 export const styles = StyleSheet.create({
   fullScreen: {height: '100%', width: '100%'},
