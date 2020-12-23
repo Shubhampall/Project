@@ -38,9 +38,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     height: 50,
   },
-  IconText: {color: Color.Blue, marginLeft: 5, fontSize: 20},
+  IconText: {
+    color: Color.Blue,
+    marginLeft: 5,
+    fontSize: 20,
+    alignSelf: 'center',
+  },
   margin20: {marginLeft: 20},
-  margin10: {marginLeft: 10},
+  margin10: {marginLeft: 10, alignSelf: 'center'},
   Textsing: {color: Color.Blur_Black, top: 20},
   searchSection: {
     top: 40,

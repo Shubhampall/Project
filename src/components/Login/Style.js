@@ -103,6 +103,11 @@ export const styles = StyleSheet.create({
     width: '35%',
     marginHorizontal: 10,
   },
-  margin10: {marginLeft: 10},
-  IconText: {color: Color.Blue, marginLeft: 5, fontSize: 20},
+  margin10: {marginLeft: 10, alignSelf: 'center'},
+  IconText: {
+    color: Color.Blue,
+    marginLeft: 5,
+    fontSize: 20,
+    alignSelf: 'center',
+  },
 });

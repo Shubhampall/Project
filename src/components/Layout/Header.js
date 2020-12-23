@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Pressable} from 'react-native';
 import Icons from 'react-native-vector-icons/AntDesign';
 import Bell from 'react-native-vector-icons/FontAwesome';
+
 import styles from './Style';
 
 const HeaderComponent = (props) => {
@@ -15,6 +16,7 @@ const HeaderComponent = (props) => {
       navigation.goBack();
     }
   };
+
   return (
     <View style={styles.Header}>
       <Pressable onPress={handleHeaderAction}>

@@ -2,12 +2,12 @@ import React, {useEffect} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Icons from 'react-native-vector-icons/AntDesign';
+import {useDispatch} from 'react-redux';
 
 import Home from '../Home/index';
 import CustomSidebarMenu from './CustomSidebarMenu';
 import Profile from '../Profile/index';
 import {setAuthentication} from '../../store/Registration/action';
-import {useDispatch} from 'react-redux';
 
 const Drawer = createDrawerNavigator();
 const index = () => {
@@ -18,6 +18,7 @@ const index = () => {
     }, [dispatch]);
     return <></>;
   };
+
   return (
     <Drawer.Navigator
       initialRouteName="Home"
@@ -25,7 +26,6 @@ const index = () => {
         activeTintColor: '#e91e63',
         itemStyle: {marginVertical: 5},
       }}
-      // Here we are setting our custom sidebar menu
       drawerContent={(props) => <CustomSidebarMenu {...props} />}>
       <Drawer.Screen
         name="Home"

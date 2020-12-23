@@ -6,10 +6,11 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/Entypo';
-import Icons from 'react-native-vector-icons/AntDesign';
+import {Pressable} from 'react-native';
+
 import {Logo} from '../../constant/images';
 import {styles} from './Sytle';
-import {Pressable} from 'react-native';
+
 const CustomSidebarMenu = (props) => {
   return (
     <View style={styles.f1}>

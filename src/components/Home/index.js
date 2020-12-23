@@ -1,19 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import {Text, View, ActivityIndicator, Alert, Pressable} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import {FlatList, ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Diamond from 'react-native-vector-icons/MaterialCommunityIcons';
 import Fashion from 'react-native-vector-icons/Fontisto';
+import {isEmpty} from 'lodash';
+import Skeleton from 'react-native-skeleton-placeholder';
+import {useDispatch, useSelector} from 'react-redux';
 
 import HeaderComponent from '../Layout/Header';
 import Inputcomponent from '../commonComponent/Input';
 import {ice} from '../../constant/images';
 import Card from '../commonComponent/Card';
 import styles from './Style';
-import {useDispatch, useSelector} from 'react-redux';
-import {apiData} from '../../store/Home/operation';
-import {isEmpty} from 'lodash';
-import Skeleton from 'react-native-skeleton-placeholder';
+import {ApiData} from '../../store/Home/operation';
 
 const Home = ({navigation}) => {
   const SkeletopLoder = () => {
@@ -28,16 +28,17 @@ const Home = ({navigation}) => {
   };
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
-  const DispatchData = (value) => {
+  const dispatchData = (value) => {
     setData(value);
   };
   useEffect(() => {
-    dispatch(apiData('/posts'));
+    dispatch(ApiData('/posts'));
   }, [dispatch]);
-  const HomeData = useSelector((state) => state.Home);
+  const homeData = useSelector((state) => state.Home);
   useEffect(() => {
-    DispatchData(HomeData.json.homeData);
-  }, [HomeData.json.homeData]);
+    dispatchData(homeData.json.homeData);
+  }, [homeData.json.homeData]);
+
   return (
     <View style={styles.Background}>
       <HeaderComponent name="Home" navigation={navigation} />
@@ -55,33 +56,37 @@ const Home = ({navigation}) => {
         </View>
         <View>
           <View style={styles.buttonView}>
-            <Icon.Button backgroundColor="#FFFFFF" style={styles.Top10}>
+            <Pressable
+              style={styles.Pressable}
+              onPress={() => Alert.alert('Empty')}>
               <Diamond name="diamond" size={40} />
-              <Text> Beauty</Text>
-            </Icon.Button>
+              <Text style={styles.alignSelf}> Beauty</Text>
+            </Pressable>
             <Text style={styles.middleText}>|</Text>
-            <Icon.Button backgroundColor="#FFFFFF" style={styles.shopping}>
+            <Pressable
+              style={styles.Pressable}
+              onPress={() => Alert.alert('Empty')}>
               <Fashion name="shopping-bag" size={40} />
-              <Text> Fashion</Text>
-            </Icon.Button>
+              <Text style={styles.alignSelf}> Fashion</Text>
+            </Pressable>
           </View>
         </View>
       </View>
-      <ScrollView style={styles.scroll}>
-        {isEmpty(data) ? (
-          <SkeletopLoder />
-        ) : (
-          // <ActivityIndicator size="large" color={Color.Blue} />
-          data.map((item, index) => {
-            return (
-              <View key={index} style={styles.map}>
-                <Card item={item} pic={ice} index={index} />
-              </View>
-            );
-          })
-        )}
-      </ScrollView>
+      {isEmpty(data) ? (
+        <SkeletopLoder />
+      ) : (
+        <FlatList
+          keyExtractor={(item) => item.id.toString()}
+          data={data}
+          renderItem={({item}) => (
+            <View style={styles.map}>
+              <Card item={item} pic={ice} />
+            </View>
+          )}
+        />
+      )}
     </View>
   );
 };
+
 export default Home;

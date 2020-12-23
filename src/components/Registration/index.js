@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CheckBox from '@react-native-community/checkbox';
 import {useDispatch} from 'react-redux';
+import {Pressable} from 'react-native';
 
 import {LoginBack} from '../../constant/images';
 import Inputcomponent from '../commonComponent/Input';
@@ -13,7 +14,6 @@ import {setUserDetails} from '../../store/Registration/action';
 import {includes, isEmpty} from 'lodash';
 import Color from '../../constant/Color';
 import JsonData from './JsonData';
-import {Pressable} from 'react-native';
 
 const Registration = ({navigation}) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
@@ -50,6 +50,7 @@ const Registration = ({navigation}) => {
       Alert.alert('Please Enter Your Name');
     }
   };
+
   return (
     <ImageBackground source={LoginBack} style={styles.image}>
       <View style={styles.demo} backgroundColor={Color.cream}>

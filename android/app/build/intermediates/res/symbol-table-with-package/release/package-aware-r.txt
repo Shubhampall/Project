@@ -553,6 +553,26 @@ attr shapeAppearanceLargeComponent
 attr shapeAppearanceMediumComponent
 attr shapeAppearanceOverlay
 attr shapeAppearanceSmallComponent
+attr shimmer_auto_start
+attr shimmer_base_alpha
+attr shimmer_base_color
+attr shimmer_clip_to_children
+attr shimmer_colored
+attr shimmer_direction
+attr shimmer_dropoff
+attr shimmer_duration
+attr shimmer_fixed_height
+attr shimmer_fixed_width
+attr shimmer_height_ratio
+attr shimmer_highlight_alpha
+attr shimmer_highlight_color
+attr shimmer_intensity
+attr shimmer_repeat_count
+attr shimmer_repeat_delay
+attr shimmer_repeat_mode
+attr shimmer_shape
+attr shimmer_tilt
+attr shimmer_width_ratio
 attr showAsAction
 attr showDividers
 attr showMotionSpec
@@ -1449,6 +1469,7 @@ id auto
 id beginning
 id blocking
 id bottom
+id bottom_to_top
 id buttonPanel
 id cancel_button
 id catalyst_redbox_title
@@ -1525,8 +1546,10 @@ id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
 id left
+id left_to_right
 id line1
 id line3
+id linear
 id listMode
 id list_item
 id masked
@@ -1579,11 +1602,15 @@ id peekHeight
 id pin
 id progress_circular
 id progress_horizontal
+id radial
 id radio
 id react_test_id
+id restart
+id reverse
 id right
 id right_icon
 id right_side
+id right_to_left
 id rn_frame_file
 id rn_frame_method
 id rn_redbox_dismiss_button
@@ -1663,6 +1690,7 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id top_to_bottom
 id touch_outside
 id transition_current_scene
 id transition_layout_save
@@ -2728,6 +2756,7 @@ styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottomRight cornerFamilyTopLeft cornerFamilyTopRight cornerSize cornerSizeBottomLeft cornerSizeBottomRight cornerSizeTopLeft cornerSizeTopRight
+styleable ShimmerFrameLayout shimmer_auto_start shimmer_base_alpha shimmer_base_color shimmer_clip_to_children shimmer_colored shimmer_direction shimmer_dropoff shimmer_duration shimmer_fixed_height shimmer_fixed_width shimmer_height_ratio shimmer_highlight_alpha shimmer_highlight_color shimmer_intensity shimmer_repeat_count shimmer_repeat_delay shimmer_repeat_mode shimmer_shape shimmer_tilt shimmer_width_ratio
 styleable SimpleDraweeView actualImageResource actualImageScaleType actualImageUri backgroundImage fadeDuration failureImage failureImageScaleType overlayImage placeholderImage placeholderImageScaleType pressedStateOverlayImage progressBarAutoRotateInterval progressBarImage progressBarImageScaleType retryImage retryImageScaleType roundAsCircle roundBottomEnd roundBottomLeft roundBottomRight roundBottomStart roundTopEnd roundTopLeft roundTopRight roundTopStart roundWithOverlayColor roundedCornerRadius roundingBorderColor roundingBorderPadding roundingBorderWidth viewAspectRatio
 styleable Snackbar snackbarButtonStyle snackbarStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha elevation maxActionInlineWidth

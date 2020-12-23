@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 // @react-native-community/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// react-native-appearance
+import io.expo.appearance.RNCAppearancePackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-reanimated
@@ -74,6 +76,7 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new ReactCheckBoxPackage(),
       new RNCMaskedViewPackage(),
+      new RNCAppearancePackage(),
       new RNGestureHandlerPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),

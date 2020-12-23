@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     backgroundColor: Color.White,
   },
   buttonView: {flexDirection: 'row', width: '100%'},
-  middleText: {fontSize: 50, marginLeft: '10%', top: '01%'},
+  middleText: {fontSize: 50, top: '01%'},
   scrollView: {
     width: '100%',
     paddingHorizontal: 5,
@@ -20,8 +20,11 @@ const styles = StyleSheet.create({
     marginTop: 5,
     alignItems: 'center',
   },
-  Top10: {
-    top: '10%',
+  Pressable: {
+    flexDirection: 'row',
+    marginHorizontal: 40,
+    height: 40,
+    top: 25,
   },
   shopping: {
     marginLeft: '10%',
@@ -58,5 +61,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginVertical: 10,
   },
+  alignSelf: {alignSelf: 'center'},
 });
 export default styles;

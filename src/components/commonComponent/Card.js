@@ -1,11 +1,13 @@
 import React from 'react';
+import {Alert} from 'react-native';
+import {Pressable} from 'react-native';
 import {Image, Text, View} from 'react-native';
 
 import styles from './Style';
 
-const Card = ({item, pic, index}) => {
+const Card = ({item, pic}) => {
   return (
-    <View key={index} style={styles.card}>
+    <View style={styles.card}>
       <View style={styles.imagecontanor}>
         <Image source={pic} style={styles.horizontalImage} />
       </View>
@@ -16,9 +18,11 @@ const Card = ({item, pic, index}) => {
         <View style={styles.View2}>
           <Text size={12}>{item.title}</Text>
         </View>
-        <Text size={14} style={styles.Text2}>
-          'View article'
-        </Text>
+        <Pressable onPress={() => Alert.alert(item.title)}>
+          <Text size={14} style={styles.Text2}>
+            'View article'
+          </Text>
+        </Pressable>
       </View>
     </View>
   );

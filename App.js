@@ -6,75 +6,40 @@
  * @flow strict-local
  */
 
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from '@react-navigation/native';
 import React from 'react';
-import {StyleSheet} from 'react-native';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {createStackNavigator} from '@react-navigation/stack';
-import index from './src/components/Main';
+import {useSelector} from 'react-redux';
+
+import Main from './src/components/Main';
 import Login from './src/components/Login';
 import Registration from './src/components/Registration';
-import {useSelector} from 'react-redux';
+import {AppearanceProvider, useColorScheme} from 'react-native-appearance';
+
 const Stack = createStackNavigator();
 const App = () => {
   const Login1 = useSelector((state) => state.Login);
-  console.log(Login1.authentication);
+  const scheme = useColorScheme();
   return (
-    // <Provider store={ConfigStore}>
-    <NavigationContainer>
-      {Login1.authentication ? (
-        <Stack.Navigator initialRouteName="Main" headerMode={null}>
-          <Stack.Screen name="Main" component={index} />
-        </Stack.Navigator>
-      ) : (
-        <Stack.Navigator initialRouteName="Login" headerMode={null}>
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Registration" component={Registration} />
-        </Stack.Navigator>
-      )}
-    </NavigationContainer>
-    // </Provider>
+    <AppearanceProvider>
+      <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
+        {Login1.authentication ? (
+          <Stack.Navigator initialRouteName="Main" headerMode={null}>
+            <Stack.Screen name="Main" component={Main} />
+          </Stack.Navigator>
+        ) : (
+          <Stack.Navigator initialRouteName="Login" headerMode={null}>
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Registration" component={Registration} />
+          </Stack.Navigator>
+        )}
+      </NavigationContainer>
+    </AppearanceProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
 
 export default App;

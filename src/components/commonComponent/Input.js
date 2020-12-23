@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const Inputcomponent = ({placeholder, show = false, handle}) => {
   const [hidePass, setHidePass] = useState(show);
+
   return (
     <View style={styles.flex}>
       <TextInput

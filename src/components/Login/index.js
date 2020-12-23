@@ -11,15 +11,16 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CheckBox from '@react-native-community/checkbox';
 import {useSelector, useDispatch} from 'react-redux';
+import {Pressable} from 'react-native';
+import {includes, isEmpty} from 'lodash';
+
 import {setAuthentication} from '../../store/Registration/action';
 import {styles} from './Style';
 import {LoginBack} from '../../constant/images';
 import Inputcomponent from '../commonComponent/Input';
 import JsonData from './JsonData';
 import ButtonComponent from '../commonComponent/Button';
-import {includes, isEmpty} from 'lodash';
 import Color from '../../constant/Color';
-import {Pressable} from 'react-native';
 
 const Login = ({navigation}) => {
   const Registrationstate = useSelector((state) => state.Registration);
@@ -28,7 +29,6 @@ const Login = ({navigation}) => {
     email: '',
     password: '',
   });
-
   const Dispatch = (type, val) => {
     setUserLogin({
       ...userLogin,
@@ -61,6 +61,7 @@ const Login = ({navigation}) => {
     }
   };
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
+
   return (
     <ImageBackground source={LoginBack} style={styles.image}>
       <View style={styles.demo} backgroundColor={Color.cream}>
